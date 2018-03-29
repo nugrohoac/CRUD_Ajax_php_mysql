@@ -20,6 +20,7 @@ function manageData() {
         url: url+'/read.php',
         data: {page:page}
     }).done(function(data){
+        console.log(data);
         total_page = Math.ceil(data.total/10);
         current_page = page;
 
