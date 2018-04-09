@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-    var url = "http://localhost/api/file";
+    var url = "http://localhost/JQuery/file";
     var page = 1;
     var current_page = 1;
     var total_page = 0;

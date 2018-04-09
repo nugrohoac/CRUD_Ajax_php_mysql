@@ -1,7 +1,7 @@
 <?php
 
 define("DB_USER", "root");
-define("DB_PASSWORD", "");
+define("DB_PASSWORD", "password123");
 define("DB_DATABASE", "db_belajar");
 define("DB_HOST", "localhost");
 
