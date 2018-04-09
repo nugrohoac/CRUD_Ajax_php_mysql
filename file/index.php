@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tutorial CRUD Dengan AJAX JQuery PHP MySQL</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">        
+        <title>Template JQuery</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 margin-tb">
-                    <h2>Tutorial CRUD Dengan AJAX JQuery PHP MySQL</h2>
+                    <h2>Template JQuery CRUD</h2>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#create-user">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Buat User Baru
                     </button>
@@ -29,7 +29,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tbody">
                         </tbody>
                     </table>
                     <ul id="pagination" class="pagination-sm"></ul>
@@ -46,7 +46,7 @@
                                     <h4 class="modal-title" id="myModalLabel">Tambah User</h4>
                                 </div>
                                 <div class="col-md-4 col-xs-6">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></butto>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel ×</span></butto>
                                 </div>
                             </div>
                         </div>
@@ -79,11 +79,17 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+                            <div class="row">
+                                <div class="col-md-8 col-xs-6">
+                                    <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+                                </div>
+                                <div class="col-md-4 col-xs-6">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel ×</span></butto>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-body">
-                            <form data-toggle="validator" action="api/update.php" method="put">
+                            <form data-toggle="validator" action="/update.php" method="put">
                                 <input type="hidden" name="user_id" class="user_id">
                                 <div class="form-group">
                                     <label class="control-label" for="user_name">Nama</label>
@@ -98,7 +104,7 @@
                                     <input type="text" name="user_address" class="form-control" required />
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-success crud-edit">Submit</button>
+                                    <button type="submit" class="btn btn-success crud-edit">Update</button>
                                 </div>
                             </form>
                         </div>
@@ -106,6 +112,26 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal Untuk delete -->
+        <!-- Modal HTML -->
+        <div class="modal fade" id="delete-user" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header">				
+                        <h4 class="modal-title">Are you sure?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you really want to delete these records? This process cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger crud-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>     
+
         <!-- JS Start From Here  -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
